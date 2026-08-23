@@ -1,0 +1,57 @@
+Middleware uses -
+    Auth check before res.
+    for rate limiting. 429 - too many reqs
+        -  npm i @upstash/ratelimit@2.0.5 @upstash/redis@1.34.9
+
+
+frontend - 
+    npm create vite @latest
+    npm i react-router
+    npm i react-hot-toast               //for in-app notifications
+
+
+
+
+post css v3 tailwind
+
+cli ->
+
+npm install -D tailwindcss@3 postcss autoprefixer
+>> npx tailwindcss init -p   
+
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+
+index.css ->
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+daisy ui ->
+npm i -D daisyui@4.12.24
+
+import daisyui from "daisyui"
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [daisyui],
+  daisyui: {
+    themes: ["forest","coffee"],
+  }
+}
+
+icons and replacing fetch api with axios ->  npm i lucide-react axios
