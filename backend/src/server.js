@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import path from "path";
+import job from "./lib/cron.js"
 
 import notesRoutes from "./routes/notesRoutes.js";
 import { connectDB } from "./config/db.js";
@@ -43,5 +44,6 @@ if (process.env.NODE_ENV === "production") {
 connectDB().then(() => {
   app.listen(PORT, () => {
     console.log("Server started on PORT:", PORT);
+    if(process.env.NODE_ENV === "production") job.start();
   });
 });

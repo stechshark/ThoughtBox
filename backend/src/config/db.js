@@ -4,7 +4,7 @@ dns.setServers([
     '1.1.1.1',
     '8.8.8.8'
 ])
-export async function connectDB() {                          //db conn fn declaration
+export async function connectDB() {                          
     try{
        await mongoose.connect(process.env.MONGO_URI)
        console.log('CONNECTED TO MONGODB CLUSTER')
